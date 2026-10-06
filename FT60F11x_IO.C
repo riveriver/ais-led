@@ -10,8 +10,11 @@
 //*********************************************************
 #include "SYSCFG.h"
 //***********************�궨��****************************
-#define  DemoPortOut	PA6   
-#define  DemoPortIn		PC3
+#define  LedGroup1		PA6
+#define  LedGroup2		PA0
+#define  LedGroup3		PA1
+#define  LedGroup4		PA2
+#define  LedGroup5		PC2
 /*-------------------------------------------------
  * ��������POWER_INITIAL
  * ���ܣ�  �ϵ�ϵͳ��ʼ��
@@ -85,6 +88,15 @@ void DelayMs(unsigned char Time)
 		}
 	}
 }
+
+void LED_GROUPS_SET(unsigned char State)
+{
+	LedGroup1 = State;
+	LedGroup2 = State;
+	LedGroup3 = State;
+	LedGroup4 = State;
+	LedGroup5 = State;
+}
 /*-------------------------------------------------
  *  ������: main 
  * ���ܣ�   ������
@@ -98,15 +110,15 @@ void main(void)
 	while(1)
 	{
 		/* First flash. */
-		DemoPortOut = 1;
+		LED_GROUPS_SET(1);
 		DelayMs(80);
-		DemoPortOut = 0;
+		LED_GROUPS_SET(0);
 		DelayMs(80);
 
 		/* Second flash. */
-		DemoPortOut = 1;
+		LED_GROUPS_SET(1);
 		DelayMs(80);
-		DemoPortOut = 0;
+		LED_GROUPS_SET(0);
 
 		/* DelayMs takes an unsigned char, so split 600 ms into 3 calls. */
 		DelayMs(200);
@@ -114,6 +126,8 @@ void main(void)
 		DelayMs(200);
 	}
 }
+
+
 
 
 
