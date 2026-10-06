@@ -7,6 +7,9 @@
 #define LedGroup4 PA2
 #define LedGroup5 PC2
 
+/* 每次短闪的点亮时间和间隔时间，单位为毫秒。 */
+#define SHORT_FLASH_MS 50
+
 /*
  * 系统与GPIO初始化。
  * LED采用高电平点亮，所有灯组在初始化阶段保持低电平熄灭。
@@ -91,27 +94,27 @@ void main(void)
 	{
 		/* 第一次短闪。 */
 		LED_GROUPS_SET(1);
-		DelayMs(50);
+		DelayMs(SHORT_FLASH_MS);
 		LED_GROUPS_SET(0);
-		DelayMs(50);
+		DelayMs(SHORT_FLASH_MS);
 
 		/* 第二次短闪。 */
 		LED_GROUPS_SET(1);
-		DelayMs(50);
+		DelayMs(SHORT_FLASH_MS);
 		LED_GROUPS_SET(0);
-		DelayMs(50);
+		DelayMs(SHORT_FLASH_MS);
 
 		/* 第三次短闪。 */
 		LED_GROUPS_SET(1);
-		DelayMs(50);
+		DelayMs(SHORT_FLASH_MS);
 		LED_GROUPS_SET(0);
-		DelayMs(50);
+		DelayMs(SHORT_FLASH_MS);
 
 		/* 第四次短闪。 */
 		LED_GROUPS_SET(1);
-		DelayMs(50);
+		DelayMs(SHORT_FLASH_MS);
 		LED_GROUPS_SET(0);
-		DelayMs(50);
+		DelayMs(SHORT_FLASH_MS);
 
 		/* DelayMs参数为unsigned char，因此500 ms拆成两次250 ms。 */
 		DelayMs(250);
