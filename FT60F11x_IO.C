@@ -82,10 +82,15 @@ void main(void)
 		LED_GROUPS_SET(1);
 		DelayMs(50);
 		LED_GROUPS_SET(0);
+		DelayMs(50);
 
-		DelayMs(200);
-		DelayMs(200);
-		DelayMs(200);
+		LED_GROUPS_SET(1);
+		DelayMs(50);
+		LED_GROUPS_SET(0);
+		DelayMs(50);
+
+		DelayMs(250);
+		DelayMs(250);
 	}
 }
 
