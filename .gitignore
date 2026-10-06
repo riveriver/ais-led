@@ -1,0 +1,21 @@
+# FMDIDE build outputs
+*.asm
+*.bin
+*.cmf
+*.cof
+*.d
+*.hex
+*.hxl
+*.lpp
+*.map
+*.obj
+*.p1
+*.pre
+*.rlf
+*.sdb
+*.sym
+
+# Common temporary files
+*.bak
+*.tmp
+*~
