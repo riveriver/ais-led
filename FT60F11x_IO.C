@@ -97,14 +97,23 @@ void main(void)
     
 	while(1)
 	{
-		DemoPortOut = 1; 		
-		DelayMs(10);     		//10ms
-        
-		if(DemoPortIn == 1) 	//�ж������Ƿ�Ϊ�ߵ�ƽ 
-		{
-			DemoPortOut = 0;
-		}
-		DelayMs(10); 
+		/* First flash. */
+		DemoPortOut = 1;
+		DelayMs(80);
+		DemoPortOut = 0;
+		DelayMs(80);
+
+		/* Second flash. */
+		DemoPortOut = 1;
+		DelayMs(80);
+		DemoPortOut = 0;
+
+		/* DelayMs takes an unsigned char, so split 600 ms into 3 calls. */
+		DelayMs(200);
+		DelayMs(200);
+		DelayMs(200);
 	}
 }
+
+
 
